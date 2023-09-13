@@ -4,9 +4,9 @@ from flask import Flask, render_template, request, flash, redirect, session, g,a
 from flask_debugtoolbar import DebugToolbarExtension
 from sqlalchemy.exc import IntegrityError
 from flask_bcrypt import check_password_hash,bcrypt
-
+# from bcrypt import  check_password_hash
 from forms import UserAddForm, LoginForm, MessageForm,EditPassword
-from models import db, connect_db, User, Message
+from models import db, connect_db, User, Message,bcrypt
 
 CURR_USER_KEY = "curr_user"
 
