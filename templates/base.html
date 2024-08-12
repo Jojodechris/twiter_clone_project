@@ -1,3 +1,6 @@
+<!-- base.html -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +21,16 @@
 </head>
 
 <body class="{% block body_class %}{% endblock %}">
+  <!-- <style>
+    body {
+      background-image: url('https://tse4.mm.bing.net/th?id=OIG1.0PV_N_NlcnZatV.kZ_mr&pid=ImgGn');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style> -->
+<div class="back"
+-->
 <nav class="navbar navbar-expand">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -52,6 +65,7 @@
     </ul>
   </div>
 </nav>
+</div>
 <div class="container">
   {% for category, message in get_flashed_messages(with_categories=True) %}
   <div class="alert alert-{{ category }}">{{ message }}</div>
@@ -59,7 +73,7 @@
 
   {% block content %}
   {% endblock %}
-
+  <!-- <img src="https://tse4.mm.bing.net/th?id=OIG1.0PV_N_NlcnZatV.kZ_mr&pid=ImgGn" alt="logo"> -->
 </div>
 </body>
 </html>

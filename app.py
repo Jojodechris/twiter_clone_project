@@ -83,8 +83,7 @@ def signup():
                 image_url=form.image_url.data or User.image_url.default.arg,
                 location=form.location.data,
                 bio=form.bio.data,
-                header_image_url=form.header_image_url.data
-                
+                header_image_url=form.header_image_url.data         
             )
             db.session.commit()
         
@@ -425,7 +424,6 @@ def homepage():
                     .all())
 
         return render_template('home.html', messages=messages)
-
     else:
         return render_template('home-anon.html')
 ##############################################################################
@@ -495,13 +493,16 @@ def new_password():
 
     # Current_password_hashed=bcrypt.generate_password_hash(Current_password).decode('utf-8')
     # if check_password_hash(correct_password, Current_password_hashed):
-        if bcrypt.check_password_hash(Current_password,g.user.password):
+    #         print ("Correct Password!")
+        import pdb
+        pdb.set_trace()
+        if bcrypt.check_password_hash(g.user.password,Current_password):
             if new_password == confirm_password:
                 new_password=form.new_password.data
                 confirm_password=form.confirm_password.data
             # Hash the new password before storing it
                 hashed_password = bcrypt.generate_password_hash (new_password).decode('utf-8')
-                g.user.password = hashed_password
+                g.user.password =hashed_password
                 db.session.commit()
                 import pdb
                 pdb.set_trace()

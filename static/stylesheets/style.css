@@ -8,6 +8,10 @@ body.error-404 {
   background-color: #1da1f2;
 }
 
+.back {
+  background-color: #fd0000;
+}
+
 .form-control {
   margin-bottom: 20px;
 }

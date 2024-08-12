@@ -20,6 +20,7 @@ class UserAddForm(FlaskForm):
     bio=StringField('write something for your bio', validators=[DataRequired()])
     header_image_url=StringField('(Optional) Background Image URL')
 
+
 class EditPassword(FlaskForm):
      """Form for editing users."""
      Current_password = PasswordField('Current Password', validators=[Length(min=6)])
